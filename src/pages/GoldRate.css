@@ -1,0 +1,443 @@
+/* ═══════════════════════════════════════════════════════
+   GoldRate.css  —  Unnati Jewellers Gold Rate Page Styles
+   ═══════════════════════════════════════════════════════ */
+
+.gold-rate-page {
+  font-family: 'Inter', sans-serif;
+  background-color: #FEF8F6; /* Soft cream/pink brand bg */
+  color: #2b2b2b;
+  min-height: 100vh;
+  padding-bottom: 80px;
+}
+
+/* ── Hero Banner ── */
+.gr-hero {
+  background: #810B38; /* Primary Maroon */
+  color: #fff;
+  padding: 80px 0 50px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.gr-hero__container {
+  position: relative;
+  z-index: 2;
+}
+
+.gr-hero__title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.gr-hero__subtitle {
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ── Content Layout ── */
+.gr-content {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Grid of Tables */
+.gr-grid-tables {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: stretch;
+}
+
+.text-right {
+  text-align: right;
+}
+
+@media (max-width: 960px) {
+  .gr-grid-tables {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Card Surface Container */
+.gr-card {
+  background-color: #ffffff;
+  border: 1px solid rgba(129, 11, 56, 0.08);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(129, 11, 56, 0.03);
+  padding: 30px;
+  overflow: hidden;
+}
+
+.gr-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 16px;
+}
+
+.gr-card__header.stack-mobile {
+  flex-wrap: wrap;
+}
+
+.gr-card__title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: #810B38;
+  margin: 0;
+}
+
+/* Karat Selector Pills */
+.gr-karat-selector-pill {
+  display: flex;
+  background-color: #FEF8F6;
+  padding: 4px;
+  border-radius: 30px;
+  border: 1px solid rgba(129, 11, 56, 0.06);
+}
+
+.gr-pill-btn {
+  background: none;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #810B38;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.gr-pill-btn.active {
+  background-color: #810B38;
+  color: #ffffff;
+}
+
+/* Custom dropdown wrapper */
+.gr-select-wrap {
+  position: relative;
+}
+
+.gr-karat-select {
+  appearance: none;
+  background-color: #ffffff;
+  border: 1.5px solid rgba(129, 11, 56, 0.15);
+  border-radius: 30px;
+  padding: 8px 36px 8px 18px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #810B38;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+.gr-karat-select:focus,
+.gr-karat-select:hover {
+  border-color: #810B38;
+}
+
+.gr-select-wrap::after {
+  content: '▼';
+  font-size: 8px;
+  color: #810B38;
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* ── Tables ── */
+.gr-table-wrap {
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid rgba(129, 11, 56, 0.08);
+  scrollbar-width: thin;
+  scrollbar-color: #d4af37 transparent;
+}
+
+.gr-table-wrap::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+}
+
+.gr-table-wrap::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.gr-table-wrap::-webkit-scrollbar-thumb {
+  background-color: #d4af37;
+  border-radius: 10px;
+}
+
+.gr-table-wrap.scrollable {
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.gr-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.gr-table thead th {
+  background-color: #810B38;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 14px 20px;
+}
+
+.gr-table tbody tr {
+  border-bottom: 1px solid rgba(129, 11, 56, 0.06);
+  transition: background-color 0.2s ease;
+}
+
+.gr-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.gr-table tbody tr:hover {
+  background-color: rgba(129, 11, 56, 0.01);
+}
+
+.gr-table td {
+  padding: 18px 20px;
+  vertical-align: middle;
+}
+
+.gr-grammage-cell {
+  font-size: 15px;
+  font-weight: 600;
+  color: #2b2b2b;
+}
+
+.gr-date-cell {
+  font-size: 14px;
+  color: #6b6b6b;
+}
+
+.gr-rate-cell {
+  /* Keep native table-cell behavior */
+}
+
+.gr-rate-num {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2b2b2b;
+  margin-bottom: 2px;
+}
+
+.gr-history-rate-cell {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2b2b2b;
+}
+
+.gr-change-lbl {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.gr-change-lbl.drop {
+  color: #3d8b37; /* Drop in rate is green (savings) */
+}
+
+.gr-change-lbl.rise {
+  color: #b83a22; /* Rise is red/orange */
+}
+
+.gr-change-lbl.invisible {
+  visibility: hidden;
+}
+
+/* ── Trend Chart Section ── */
+.gr-trends-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.gr-chart-filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.gr-filter-btn {
+  background-color: #ffffff;
+  border: 1.5px solid rgba(129, 11, 56, 0.15);
+  border-radius: 30px;
+  padding: 8px 18px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #6b6b6b;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gr-filter-btn.active {
+  border-color: #810B38;
+  background-color: #FEF8F6;
+  color: #810B38;
+  font-weight: 600;
+}
+
+/* Bullet Dots inside filter buttons */
+.gr-filter-btn .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.gr-filter-btn .dot-18 { background-color: #E0B034; }
+.gr-filter-btn .dot-20 { background-color: #2E6AD1; }
+.gr-filter-btn .dot-22 { background-color: #3D8B37; }
+.gr-filter-btn .dot-24 { background-color: #C84E31; }
+
+/* SVG Graph */
+.gr-chart-container {
+  width: 100%;
+  margin-top: 30px;
+  position: relative;
+  overflow: visible;
+}
+
+.gr-svg-chart {
+  display: block;
+  overflow: visible;
+}
+
+.gr-chart-gridline {
+  stroke: rgba(129, 11, 56, 0.05);
+  stroke-width: 1px;
+}
+
+.gr-chart-y-label {
+  font-size: 10px;
+  fill: #6b6b6b;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+}
+
+.gr-chart-x-label {
+  font-size: 10px;
+  fill: #6b6b6b;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Line paths styling */
+.gr-chart-line {
+  fill: none;
+  stroke-width: 2.5px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.gr-chart-line.line-18 { stroke: #E0B034; }
+.gr-chart-line.line-20 { stroke: #2E6AD1; }
+.gr-chart-line.line-22 { stroke: #3D8B37; }
+.gr-chart-line.line-24 { stroke: #C84E31; }
+
+/* Dots on line intersections */
+.gr-chart-dot {
+  stroke-width: 2px;
+  r: 4;
+  cursor: pointer;
+  transition: r 0.15s ease;
+}
+
+.gr-chart-dot.dot-18 { fill: #ffffff; stroke: #E0B034; }
+.gr-chart-dot.dot-20 { fill: #ffffff; stroke: #2E6AD1; }
+.gr-chart-dot.dot-22 { fill: #ffffff; stroke: #3D8B37; }
+.gr-chart-dot.dot-24 { fill: #ffffff; stroke: #C84E31; }
+
+.gr-chart-dot:hover {
+  r: 6;
+}
+
+/* Time Period Pills */
+.gr-time-period-selector {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid rgba(129, 11, 56, 0.08);
+  padding-top: 24px;
+}
+
+.gr-time-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #810B38;
+}
+
+.gr-period-btn {
+  background-color: #ffffff;
+  border: 1px solid rgba(129, 11, 56, 0.15);
+  border-radius: 30px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #6b6b6b;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.gr-period-btn.active {
+  border-color: #810B38;
+  background-color: #FEF8F6;
+  color: #810B38;
+  font-weight: 600;
+}
+
+/* Responsive fixes */
+@media (max-width: 600px) {
+  .gr-hero {
+    padding: 60px 0 40px 0;
+  }
+  .gr-hero__title {
+    font-size: 32px;
+  }
+  .gr-card {
+    padding: 20px;
+  }
+  .gr-card__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .gr-table td, .gr-table thead th {
+    padding: 12px 14px;
+  }
+  .gr-grammage-cell {
+    font-size: 14px;
+  }
+  .gr-rate-num {
+    font-size: 14px;
+  }
+  .gr-chart-y-label {
+    display: none; /* Hide Y-axis labels on extra small screens to save space */
+  }
+}

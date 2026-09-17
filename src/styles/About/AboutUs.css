@@ -1,0 +1,1250 @@
+/* @import 'bootstrap/dist/css/bootstrap.min.css'; */
+
+:root {
+  /* ================= Fonts ================= */
+  --font-heading: "Fraunces", serif;
+  --font-body: "Inter", sans-serif;
+
+  /* ================= Brand Colors ================= */
+  --color-primary: #810b38;
+  --color-primary-dark: #5a1321;
+  --color-primary-light: #9d3047;
+
+  --color-background: #fef8f6;
+  --color-surface: #ffffff;
+  --color-section: #efeeeb;
+
+  --color-gold: #d4af37;
+  --color-gold-light: #f5e6c8;
+
+  --color-text: #444444d4;
+  --color-white: #ffffff;
+  --color-black: #1a1a1a;
+
+  /* ================= Extra Utility Colors ================= */
+  --color-text-dark: #2b2b2b;
+  --color-text-muted: #8e8a88;
+
+  --color-border-light: rgba(129, 11, 56, 0.08);
+  --color-border-medium: rgba(129, 11, 56, 0.14);
+  --color-border-gold: rgba(212, 175, 55, 0.2);
+
+  --color-overlay-dark: rgba(0, 0, 0, 0.35);
+  --color-overlay-primary: rgba(129, 11, 56, 0.75);
+  --color-overlay-primary-dark: rgba(129, 11, 56, 0.85);
+
+  /* ================= Shadows ================= */
+  --transition-smooth: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  --shadow-soft: 0 10px 40px rgba(129, 11, 56, 0.07);
+  --shadow-lift: 0 24px 60px rgba(129, 11, 56, 0.14);
+  --shadow-gold: 0 10px 30px rgba(212, 175, 55, 0.25);
+}
+
+.about-page {
+  background-color: var(--color-background);
+  overflow-x: hidden;
+  text-transform: capitalize;
+  
+}
+
+.section-padding {
+  padding: 90px 0;
+}
+
+@media (max-width: 991px) {
+  .section-padding {
+    padding: 80px 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-padding {
+    padding: 60px 0;
+  }
+}
+
+/* ================================================
+   1. HERO BANNER
+   ================================================ */
+.about-hero {
+  position: relative;
+  height: 60vh;
+  min-height: 450px;
+  background-image:
+    linear-gradient(
+      var(--color-overlay-primary),
+      var(--color-overlay-primary-dark)
+    ),
+    url("https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=1974&auto=format&fit=crop");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.about-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 40%,
+    rgba(0, 0, 0, 0.35) 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+.about-hero-content {
+  position: relative;
+  z-index: 5;
+  max-width: 800px;
+}
+
+.hero-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  font-weight: 500;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.hero-subtitle::before,
+.hero-subtitle::after {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: var(--color-gold);
+  vertical-align: middle;
+  opacity: 0.7;
+}
+.hero-subtitle::before {
+  margin-right: 12px;
+}
+.hero-subtitle::after {
+  margin-left: 12px;
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: 4rem;
+  color: var(--color-white) !important;
+  font-weight: 300;
+  margin-bottom: 20px;
+  letter-spacing: 0.05em;
+  text-shadow: 0 4px 28px rgba(0, 0, 0, 0.25);
+}
+
+.hero-divider {
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-gold),
+    transparent
+  );
+  margin: 0 auto 20px;
+  position: relative;
+}
+.hero-divider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  background: var(--color-gold);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.7);
+}
+
+.hero-tagline {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-style: italic;
+  color: var(--color-background);
+  letter-spacing: 0.05em;
+  font-weight: 300;
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    height: 50vh;
+    min-height: 380px;
+    background-attachment: scroll;
+  }
+  .hero-title {
+    font-size: 2.8rem;
+  }
+  .hero-tagline {
+    font-size: 1.2rem;
+  }
+  .hero-subtitle {
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+  }
+  .hero-subtitle::before,
+  .hero-subtitle::after {
+    width: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero {
+    min-height: 320px;
+    padding: 0 16px;
+  }
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  .hero-tagline {
+    font-size: 1.05rem;
+  }
+  .hero-subtitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+}
+
+/* ================================================
+   COMMON SECTION STYLING
+   ================================================ */
+.about-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.about-section .container {
+  max-width: 1320px;
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
+@media (max-width: 768px) {
+  .about-section .container {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+}
+
+.about-section.bg-cream::before,
+.about-section.bg-white::before,
+.about-section.bg-grey::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(
+    circle,
+    rgba(212, 175, 55, 0.06) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.section-label {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 15px;
+  display: inline-flex;
+  /* justify-content: center; */
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.section-label::before {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 1.5px;
+  background: currentColor;
+  opacity: 0.6;
+}
+
+.section-label.text-accent {
+  color: var(--color-gold);
+}
+
+.section-heading {
+  font-family: var(--font-heading);
+  font-size: 2.8rem;
+  margin-bottom: 25px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.section-desc {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.section-paragraph {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 20px;
+}
+
+.bg-cream {
+  background-color: var(--color-background);
+}
+
+.bg-maroon {
+  background-color: var(--color-primary);
+  background-image:
+    radial-gradient(
+      ellipse at 15% 20%,
+      rgba(212, 175, 55, 0.08) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 85% 80%,
+      rgba(255, 255, 255, 0.04) 0%,
+      transparent 50%
+    );
+}
+
+/* ================================================
+   2. EDITORIAL BLOCK QUOTES (Our Foundation)
+   ================================================ */
+.editorial-quote-block {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.editorial-title {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  line-height: 1.3;
+  margin-bottom: 30px;
+  font-weight: 400;
+  position: relative;
+}
+
+.quote-separator {
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-gold),
+    transparent
+  );
+  margin: 0 auto 30px;
+}
+
+.quote-separator.bg-accent {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-gold),
+    transparent
+  );
+}
+
+.editorial-lead {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  line-height: 1.7;
+  color: var(--color-primary);
+  margin-bottom: 25px;
+  font-style: italic;
+}
+
+.editorial-text {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--color-black);
+  text-align: justify;
+}
+
+.editorial-text-1 {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--color-white);
+  text-align: justify;
+}
+
+/* ================================================
+   3. DARK FEATURE BOXES (What Unnati Means grid)
+   ================================================ */
+.feature-box-dark {
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(254, 248, 246, 0.15);
+  padding: 35px 30px;
+  height: 100%;
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+}
+
+.feature-box-dark::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(212, 175, 55, 0.12) 0%,
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.feature-box-dark::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-gold);
+  transition: width 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.feature-box-dark:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: var(--color-gold);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+}
+
+.feature-box-dark:hover::before {
+  opacity: 1;
+}
+.feature-box-dark:hover::after {
+  width: 100%;
+}
+
+.feature-icon {
+  font-size: 2.2rem;
+  color: var(--color-gold);
+  margin-bottom: 20px;
+  display: inline-block;
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+svg.feature-icon {
+  width: 2.2rem;
+  height: 2.2rem;
+  stroke: var(--color-gold);
+  fill: none;
+}
+
+.feature-box-dark:hover .feature-icon {
+  transform: scale(1.15) rotate(-6deg);
+}
+
+.feature-box-dark h4 {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: var(--color-white);
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.feature-box-dark p {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: #c9c3c1;
+  line-height: 1.5;
+  margin: 0;
+  position: relative;
+}
+
+/* ================================================
+   4. BELIEF CARDS (Honest Guidance & More Than Jewellery)
+   ================================================ */
+.belief-card {
+  padding: 40px;
+  background-color: var(--color-white);
+  border: 1px solid rgba(129, 11, 56, 0.06);
+  height: 100%;
+  transition: var(--transition-smooth);
+  position: relative;
+}
+
+.belief-card:hover {
+  box-shadow: var(--shadow-lift);
+  transform: translateY(-6px);
+  border-color: rgba(129, 11, 56, 0.14);
+}
+
+.belief-card.highlight-border {
+  border-left: 3px solid var(--color-gold);
+}
+
+.belief-card.highlight-border:hover {
+  border-left-color: var(--color-primary);
+}
+
+/* belief-title is reused for "Suvarna Unnati Scheme" too -- force the
+   brand maroon explicitly so it can never render as default link-blue */
+.belief-title,
+h3.belief-title,
+a.belief-title {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  color: var(--color-primary) !important;
+  margin-bottom: 20px;
+  font-weight: 500;
+  position: relative;
+  display: block;
+  text-decoration: none;
+}
+
+.belief-text {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  margin-bottom: 18px;
+}
+
+.accent-quote-bar {
+  border-left: 2px solid var(--color-gold);
+  padding: 16px 20px;
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--color-primary);
+  line-height: 1.6;
+  margin-top: 25px;
+  background: linear-gradient(90deg, rgba(129, 11, 56, 0.04), transparent);
+  transition: var(--transition-smooth);
+}
+
+.belief-card:hover .accent-quote-bar {
+  border-left-color: var(--color-gold);
+  background: linear-gradient(90deg, rgba(212, 175, 55, 0.08), transparent);
+}
+
+/* ================================================
+   5. PLACEHOLDER FRAMES (Education / Value)
+   ================================================ */
+.editorial-image-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border: 1px solid rgba(129, 11, 56, 0.1);
+  padding: 10px;
+  background-color: var(--color-white);
+  transition: var(--transition-smooth);
+}
+
+.editorial-image-frame:hover {
+  box-shadow: var(--shadow-soft);
+  transform: translateY(-4px);
+}
+
+.luxury-placeholder-image {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-section);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+
+.luxury-placeholder-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    transparent 40%,
+    rgba(212, 175, 55, 0.12) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.editorial-image-frame:hover .luxury-placeholder-image::before {
+  opacity: 1;
+}
+
+/* dark (bg-maroon) placeholder variant reads in white, like screenshot 6 */
+.luxury-placeholder-image.bg-maroon {
+  color: var(--color-white);
+}
+.luxury-placeholder-image.bg-maroon .decor-icon {
+  color: var(--color-gold);
+}
+
+.decor-icon {
+  font-size: 3rem;
+  color: var(--color-gold);
+  margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+svg.decor-icon {
+  width: 3rem;
+  height: 3rem;
+  stroke: var(--color-gold);
+  fill: none;
+}
+
+.editorial-image-frame:hover .decor-icon {
+  transform: scale(1.12) rotate(8deg);
+}
+
+.luxury-placeholder-image span {
+  position: relative;
+}
+
+.editorial-heading-small {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.editorial-paragraph {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--color-black);
+  margin-bottom: 15px;
+}
+
+.value-question-box {
+  background-color: var(--color-white);
+  border: 1px solid rgba(129, 11, 56, 0.1);
+  padding: 20px;
+  margin: 20px 0;
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: var(--color-primary);
+  text-align: center;
+  font-style: italic;
+  position: relative;
+  transition: var(--transition-smooth);
+}
+
+.value-question-box::before,
+.value-question-box::after {
+  content: '"';
+  position: absolute;
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  color: rgba(212, 175, 55, 0.3);
+  line-height: 1;
+}
+.value-question-box::before {
+  top: 6px;
+  left: 14px;
+}
+.value-question-box::after {
+  bottom: -6px;
+  right: 14px;
+  transform: rotate(180deg);
+}
+
+.value-question-box:hover {
+  border-color: rgba(212, 175, 55, 0.5);
+  box-shadow: var(--shadow-gold);
+}
+
+/* ================================================
+   6. INNOVATION BOX & SCHEME CARD
+   ================================================ */
+.innovation-box {
+  padding: 40px;
+  background-color: var(--color-background);
+  border: 1px solid rgba(129, 11, 56, 0.08);
+  height: 100%;
+  transition: var(--transition-smooth);
+}
+
+.innovation-box:hover {
+  box-shadow: var(--shadow-soft);
+  transform: translateY(-4px);
+  border-color: rgba(129, 11, 56, 0.18);
+}
+
+.scheme-overview-card {
+  padding: 40px;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  background-color: var(--color-background);
+  height: 100%;
+  position: relative;
+  transition: var(--transition-smooth);
+}
+
+.scheme-overview-card::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  pointer-events: none;
+  transition: var(--transition-smooth);
+}
+
+.scheme-overview-card:hover {
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-4px);
+}
+
+.scheme-overview-card:hover::before {
+  top: 6px;
+  left: 6px;
+  right: 6px;
+  bottom: 6px;
+  border-color: rgba(212, 175, 55, 0.35);
+}
+
+/* "Suvarna Unnati Scheme" heading must stay brand-maroon, never the
+   browser default link-blue seen in screenshot 7 */
+.scheme-overview-card .belief-title,
+.scheme-overview-card .text-primary {
+  color: var(--color-primary) !important;
+}
+
+/* ================================================
+   7. GENERATIONS OF TRUST CENTER ALIGNMENT
+   ================================================ */
+.trust-icon-center {
+  font-size: 3.5rem;
+  color: var(--color-gold);
+  margin-bottom: 25px;
+  display: inline-block;
+  filter: drop-shadow(0 6px 16px rgba(212, 175, 55, 0.35));
+  animation: gentle-float 4.5s ease-in-out infinite;
+}
+svg.trust-icon-center {
+  width: 50px;
+  height: 50px;
+  stroke: var(--color-gold);
+  fill: none;
+}
+
+/* @keyframes gentle-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+} */
+
+.quality-assurance-bar {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px 30px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gold);
+  text-align: left;
+  max-width: 750px;
+  margin: 40px auto 0;
+  transition: var(--transition-smooth);
+}
+
+.quality-assurance-bar:hover {
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-3px);
+}
+
+.shield-icon {
+  font-size: 2.2rem;
+  color: var(--color-gold);
+  flex-shrink: 0;
+}
+svg.shield-icon {
+  width: 2.2rem;
+  height: 2.2rem;
+  stroke: var(--color-gold);
+  fill: none;
+}
+
+.quality-assurance-bar span {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-black);
+  line-height: 1.5;
+}
+
+.quality-assurance-bar strong {
+  color: var(--color-primary);
+}
+
+/* ================================================
+   8. PROMISE SIGNATURE
+   ================================================ */
+.promise-box {
+  background-color: var(--color-white);
+  padding: 60px 40px;
+  border: 1px solid rgba(129, 11, 56, 0.08);
+  position: relative;
+  transition: var(--transition-smooth);
+}
+
+.promise-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--color-gold);
+  border-radius: 0 0 3px 3px;
+}
+
+.promise-box:hover {
+  box-shadow: var(--shadow-lift);
+}
+
+.promise-title {
+  font-family: var(--font-heading);
+  font-size: 2.8rem;
+  color: var(--color-primary);
+  margin-bottom: 25px;
+}
+
+.promise-text {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  line-height: 1.7;
+  color: var(--color-black);
+  max-width: 750px;
+  margin: 0 auto;
+  font-style: italic;
+}
+
+.promise-signature {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sig-text {
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  transition: letter-spacing 0.4s ease;
+}
+
+.promise-box:hover .sig-text {
+  letter-spacing: 0.14em;
+}
+
+/* ================================================
+   GLOBAL LINK / BUTTON HOVER POLISH
+   ================================================ */
+.about-page a {
+  transition:
+    color 0.3s ease,
+    opacity 0.3s ease;
+}
+
+/* ================================================
+   RESPONSIVE ADJUSTMENTS
+   ================================================ */
+
+@media (max-width: 991px) {
+  .section-heading {
+    font-size: 2.2rem;
+  }
+  .editorial-title {
+    font-size: 1.8rem;
+  }
+  .editorial-lead {
+    font-size: 1.2rem;
+  }
+  .belief-card {
+    padding: 30px;
+  }
+  .promise-box {
+    padding: 40px 20px;
+  }
+  .belief-title {
+    font-size: 1.55rem;
+  }
+  .editorial-heading-small {
+    font-size: 1.7rem;
+  }
+  .promise-title {
+    font-size: 2.3rem;
+  }
+
+  .belief-card,
+  .innovation-box,
+  .scheme-overview-card {
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 767px) {
+  .about-section {
+    overflow: visible;
+  }
+
+  .section-heading {
+    font-size: 1.9rem;
+  }
+  .editorial-title {
+    font-size: 1.5rem;
+    line-height: 1.35;
+  }
+  .editorial-lead {
+    font-size: 1.05rem;
+  }
+  .editorial-text {
+    text-align: left;
+    font-size: 0.92rem;
+  }
+
+  .belief-card.highlight-border {
+    border-left-width: 2px;
+  }
+
+  .editorial-image-frame {
+    aspect-ratio: 16 / 10;
+    margin-bottom: 8px;
+  }
+
+  .quote-separator {
+    width: 70px;
+  }
+
+  .belief-card {
+    padding: 26px;
+  }
+  .accent-quote-bar {
+    font-size: 0.98rem;
+    padding: 12px 16px;
+  }
+
+  .value-question-box {
+    font-size: 1.05rem;
+    padding: 18px;
+  }
+  .value-question-box::before,
+  .value-question-box::after {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .feature-box-dark,
+  .innovation-box,
+  .scheme-overview-card {
+    padding: 24px 20px;
+  }
+
+  .feature-box-dark h4 {
+    font-size: 1.15rem;
+  }
+  .feature-box-dark p {
+    font-size: 0.85rem;
+  }
+
+  .value-question-box {
+    font-size: 1rem;
+    padding: 16px;
+  }
+
+  .quality-assurance-bar {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    padding: 18px 20px;
+  }
+
+  .promise-title {
+    font-size: 1.9rem;
+  }
+  .promise-text {
+    font-size: 1.05rem;
+  }
+  .promise-box {
+    padding: 34px 18px;
+  }
+
+  .belief-title {
+    font-size: 1.35rem;
+  }
+  .editorial-heading-small {
+    font-size: 1.4rem;
+  }
+
+  .trust-icon-center {
+    font-size: 2.8rem;
+  }
+  svg.trust-icon-center {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+
+  .sig-text {
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+  }
+}
+
+@media (max-width: 380px) {
+  .section-heading {
+    font-size: 1.65rem;
+  }
+  .editorial-title {
+    font-size: 1.3rem;
+  }
+  .promise-title {
+    font-size: 1.6rem;
+  }
+  .belief-card,
+  .innovation-box,
+  .scheme-overview-card {
+    padding: 20px 16px;
+  }
+}
+
+/* ================================================
+   ACCESSIBILITY -- reduced motion
+   ================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .trust-icon-center {
+    animation: none;
+  }
+  .feature-box-dark,
+  .belief-card,
+  .editorial-image-frame,
+  .innovation-box,
+  .scheme-overview-card,
+  .quality-assurance-bar,
+  .promise-box,
+  .feature-icon,
+  .decor-icon {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* =========================================================
+   JourneySection.css
+   Mobile-first. Matches reference: maroon bg, gold spine,
+   alternating left/right on desktop, stacked on mobile.
+   ========================================================= */
+/* ================= Timeline Section Styles ================= */
+
+.timeline-section {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.timeline-container {
+  max-width: 1100px;
+  width: 100%;
+}
+
+/* Header Typography styling */
+.timeline-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.timeline-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.timeline-title {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 1.25;
+  margin-bottom: 20px;
+  color: var(--color-white);
+}
+
+.timeline-intro {
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* The structural layout of the vertical timeline line */
+.timeline-wrapper {
+  position: relative;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+/* The vertical center bar */
+.timeline-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background-color: var(--color-gold);
+  transform: translateX(-50%);
+}
+
+/* Content blocks arrangement */
+.timeline-item {
+  display: flex;
+  position: relative;
+  margin-bottom: 6px;
+  width: 50%;
+  box-shadow: var(--shadow-gold);
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
+.timeline-item:hover {
+  border: 1px solid var(--color-gold);
+  border-radius: 5px;
+  transition: 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Positioning blocks alternatively left/right */
+.left-item {
+  left: 0;
+  justify-content: flex-end;
+  padding-right: 50px;
+  text-align: right;
+}
+
+.right-item {
+  left: 50%;
+  justify-content: flex-start;
+  padding-left: 50px;
+  text-align: left;
+}
+
+/* Custom golden bullseye marker design */
+.timeline-marker {
+  position: absolute;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  border: 2px solid var(--color-gold);
+  z-index: 2;
+  box-shadow:
+    inset 0 0 0 3px var(--color-primary),
+    0 0 0 2px var(--color-gold);
+}
+
+.left-item .timeline-marker {
+  right: -5px;
+}
+
+.right-item .timeline-marker {
+  left: -5px;
+}
+
+/* Inside the text wrapper */
+.timeline-content {
+  max-width: 400px;
+}
+
+.timeline-year {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 20px;
+  color: var(--color-gold);
+  margin-bottom: 6px;
+  font-weight: 400;
+}
+
+.timeline-event-title {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--color-white);
+}
+
+.timeline-description {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ================= Mobile Responsiveness ================= */
+@media (max-width: 768px) {
+  .timeline-section {
+    padding: 60px 10px;
+  }
+
+  .timeline-wrapper::before {
+    left: 12px; /* Push the timeline to the left margin */
+  }
+
+  .timeline-item {
+    width: 100%;
+    left: 0 !important;
+    padding-left: 26px !important;
+    padding-right: 0 !important;
+    text-align: left !important;
+    justify-content: flex-start;
+  }
+
+  .timeline-marker {
+    left: 4px !important;
+    right: auto !important;
+  }
+}

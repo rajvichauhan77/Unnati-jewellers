@@ -1,0 +1,426 @@
+/* ── Shared Page Styles ─────────────────────────────────────────── */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.page-inner {
+  min-height: 100vh;
+  background: #faf6f1;
+}
+
+/* ── Page Hero Banner ─────────────────────────────────────────────── */
+.page-hero {
+  background: linear-gradient(135deg, #1a0a10, #7b1c2e);
+  padding: 80px 24px;
+  text-align: center;
+  color: #fff;
+}
+
+.page-hero--sm {
+  padding: 60px 24px;
+}
+
+.page-hero--maroon {
+  background: linear-gradient(135deg, #7b1c2e, #5a1321);
+}
+
+.page-hero__title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 400;
+  color: #f5e6c8;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+
+.page-hero__sub {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ── Page Content ────────────────────────────────────────────────── */
+.page-content {
+  padding: 64px 24px;
+}
+
+.section-heading {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 500;
+  color: #1a0a10;
+  margin-bottom: 16px;
+}
+
+.page-text {
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  color: #4a3b3b;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+
+/* ── Collections Page ────────────────────────────────────────────── */
+.filter-bar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.filter-btn {
+  padding: 8px 20px;
+  border: 1.5px solid #e8ddd8;
+  background: transparent;
+  border-radius: 100px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #4a3b3b;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover,
+.filter-btn--active {
+  border-color: #7b1c2e;
+  background: #7b1c2e;
+  color: #fff;
+}
+
+.collections-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.product-card-v2 {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #ede5df;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.product-card-v2:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(26, 10, 16, 0.08);
+}
+
+.product-card-v2__image {
+  height: 220px;
+  background: linear-gradient(135deg, #ede5df, #d4c4bc);
+}
+
+.product-card-v2__body {
+  padding: 16px 18px 20px;
+}
+
+.product-card-v2__category {
+  font-family: "Inter", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #c9a84c;
+}
+
+.product-card-v2__name {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #1a0a10;
+  margin: 6px 0 4px;
+}
+
+.product-card-v2__price {
+  font-family: "Inter", sans-serif;
+  font-size: 0.82rem;
+  color: #6b5b52;
+  margin-bottom: 14px;
+}
+
+.product-card-v2__cta {
+  display: inline-block;
+  padding: 8px 20px;
+  border: 1.5px solid #7b1c2e;
+  color: #7b1c2e;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.product-card-v2__cta:hover {
+  background: #7b1c2e;
+  color: #fff;
+}
+
+/* ── Suvarna Scheme Page ─────────────────────────────────────────── */
+.scheme-intro {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 56px;
+}
+
+.scheme-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 56px;
+}
+
+.scheme-step {
+  text-align: center;
+  padding: 32px 20px;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #ede5df;
+  position: relative;
+}
+
+.scheme-step__num {
+  display: inline-block;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #c9a84c;
+  margin-bottom: 12px;
+}
+
+.scheme-step__title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #7b1c2e;
+  margin-bottom: 10px;
+}
+
+.scheme-step__desc {
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  color: #6b5b52;
+  line-height: 1.6;
+}
+
+.scheme-cta-wrap {
+  text-align: center;
+}
+
+.scheme-cta-btn {
+  display: inline-block;
+  padding: 14px 48px;
+  background: #7b1c2e;
+  color: #fff;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.scheme-cta-btn:hover {
+  background: #5a1321;
+  transform: translateY(-2px);
+}
+
+/* ── Contact Page ────────────────────────────────────────────────── */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.contact-detail {
+  margin-bottom: 28px;
+}
+
+.contact-detail strong {
+  display: block;
+  font-family: "Inter", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #7b1c2e;
+  margin-bottom: 6px;
+}
+
+.contact-detail p {
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  color: #4a3b3b;
+  line-height: 1.6;
+}
+
+.contact-detail a {
+  color: #4a3b3b;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contact-detail a:hover {
+  color: #7b1c2e;
+}
+
+/* ── Forms ───────────────────────────────────────────────────────── */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-label {
+  font-family: "Inter", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #4a3b3b;
+  text-transform: uppercase;
+}
+
+.form-input {
+  border: 1.5px solid #e8ddd8;
+  border-radius: 4px;
+  padding: 11px 14px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  color: #1a0a10;
+  background: #fff;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.form-input:focus {
+  border-color: #7b1c2e;
+  box-shadow: 0 0 0 3px rgba(123, 28, 46, 0.08);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b5b52' stroke-width='1.8'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  padding-right: 36px;
+}
+
+.form-submit {
+  padding: 14px 32px;
+  background: #7b1c2e;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 2px;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+  align-self: flex-start;
+}
+
+.form-submit:hover {
+  background: #5a1321;
+  transform: translateY(-1px);
+}
+
+/* ── Appointment Page ────────────────────────────────────────────── */
+.appointment-form-wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid #ede5df;
+  border-radius: 8px;
+  padding: 40px;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .collections-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .scheme-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .page-content {
+    padding: 48px 16px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .appointment-form-wrap {
+    padding: 24px 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .collections-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .scheme-steps {
+    grid-template-columns: 1fr;
+  }
+}

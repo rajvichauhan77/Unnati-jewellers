@@ -1,0 +1,281 @@
+/* ══════════════════════════════════════════════════════════════════
+   SUVARNA UNNATI SAVINGS SCHEME
+   ══════════════════════════════════════════════════════════════════ */
+
+.ss-section {
+  background: #810b38;
+  position: relative;
+  overflow: hidden;
+}
+
+.ss-container {
+  margin: 0 auto;
+  padding: 0 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+/* ── Left content ─────────────────────────────────────────────────── */
+.ss-eyebrow {
+  display: inline-block;
+  font-family: "Inter", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: #d0a737;
+  background: rgba(208, 167, 55, 0.15);
+  border: 1px solid rgba(208, 167, 55, 0.35);
+  padding: 5px 12px;
+  border-radius: 2px;
+  margin-bottom: 20px;
+}
+
+.ss-heading {
+  font-family: "Fraunces", serif;
+  font-size: clamp(1.55rem, 2.4vw, 2rem);
+  font-weight: 400;
+  color: #fef8f6;
+  line-height: 1.3;
+  margin: 0 0 32px;
+  letter-spacing: 0.1px;
+}
+
+.ss-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ss-benefit {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  color: rgba(254, 248, 246, 0.82);
+  line-height: 1.6;
+}
+
+.ss-check {
+  color: rgba(254, 248, 246, 0.7);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.ss-cta {
+  display: inline-block;
+  padding: 13px 32px;
+  border: 1.5px solid rgba(254, 248, 246, 0.7);
+  color: #fef8f6;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
+}
+
+.ss-cta:hover {
+  background: #fef8f6;
+  border-color: #fef8f6;
+  color: #810b38;
+  transform: translateY(-2px);
+}
+
+/* ── Right — membership card ──────────────────────────────────────── */
+.ss-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Decorative background shape */
+.ss-bg-icon {
+  position: absolute;
+  right: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 220px;
+  height: 220px;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.ss-bg-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.ss-card {
+  width: 100%;
+  max-width: 360px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.04) 100%);
+  border: 1px solid rgba(254, 248, 246, 0.18);
+  border-radius: 14px;
+  padding: 28px 28px 24px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255,255,255,0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  /* card tilt animation */
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.ss-card:hover {
+  transform: translateY(-6px) rotate(-0.5deg);
+  box-shadow:
+    0 20px 48px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255,255,255,0.15);
+}
+
+/* Card top row */
+.ss-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.ss-card__brand {
+  font-family: "Inter", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #fef8f6;
+  margin: 0 0 4px;
+}
+
+.ss-card__tier {
+  font-family: "Inter", sans-serif;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: #d0a737;
+  margin: 0;
+}
+
+/* Chip */
+.ss-card__chip {
+  width: 42px;
+  height: 32px;
+  background: linear-gradient(135deg, #d0a737, #b8892a);
+  border-radius: 5px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Card number */
+.ss-card__number {
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 3px;
+  color: rgba(254, 248, 246, 0.85);
+  margin: 0 0 28px;
+}
+
+/* Card bottom row */
+.ss-card__bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.ss-card__meta-label {
+  font-family: "Inter", sans-serif;
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(254, 248, 246, 0.5);
+  margin: 0 0 2px;
+}
+
+.ss-card__meta-value {
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(254, 248, 246, 0.85);
+  margin: 0;
+}
+
+.ss-card__issuer {
+  font-family: "Fraunces", serif;
+  font-size: 1rem;
+  font-weight: 500;
+  font-style: italic;
+  color: #fef8f6;
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .ss-container {
+    padding: 0 32px;
+    gap: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ss-section {
+    padding: 56px 0;
+  }
+
+  .ss-container {
+    grid-template-columns: 1fr;
+    padding: 0 24px;
+    gap: 40px;
+  }
+
+  .ss-right {
+    justify-content: flex-start;
+  }
+
+  .ss-card {
+    max-width: 100%;
+  }
+
+  .ss-bg-icon {
+    display: none;
+  }
+
+  .ss-heading {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ss-section {
+    padding: 48px 0;
+  }
+
+  .ss-container {
+    padding: 0 16px;
+    gap: 32px;
+  }
+
+  .ss-heading {
+    font-size: 1.3rem;
+  }
+
+  .ss-card {
+    padding: 22px 20px 18px;
+  }
+}

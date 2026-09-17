@@ -1,0 +1,221 @@
+/* ── Maintenance Page Theme & Layout ───────────────────────────── */
+.maintenance-page {
+  min-height: 100vh;
+  width: 100%;
+  background: radial-gradient(circle at 50% 30%, #6e0930 0%, #46041c 60%, #2b0110 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Playfair Display', 'Cormorant Garamond', serif, system-ui;
+  color: #fff;
+}
+
+/* Ambient glow overlay */
+.maintenance-page::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0) 70%);
+  pointer-events: none;
+  animation: pulseGlow 6s ease-in-out infinite alternate;
+}
+
+@keyframes pulseGlow {
+  0% { opacity: 0.5; transform: translateX(-50%) scale(0.9); }
+  100% { opacity: 1; transform: translateX(-50%) scale(1.1); }
+}
+
+.maintenance-card {
+  max-width: 620px;
+  width: 100%;
+  background: rgba(26, 3, 11, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 20px;
+  padding: 48px 36px;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 0 30px rgba(212, 175, 55, 0.05);
+  position: relative;
+  z-index: 10;
+}
+
+/* Luxury brand logo styling */
+.maintenance-logo {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  margin-bottom: 28px;
+}
+
+.maintenance-logo__main {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  background: linear-gradient(135deg, #fff 0%, #f3e5ab 50%, #d4af37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.maintenance-logo__sub {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  color: #d4af37;
+  font-family: system-ui, -apple-system, sans-serif;
+  margin-top: 2px;
+}
+
+/* Icon Container */
+.maintenance-icon-wrap {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 28px;
+  background: linear-gradient(135deg, rgba(129, 11, 56, 0.6) 0%, rgba(212, 175, 55, 0.2) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(212, 175, 55, 0.2);
+  animation: floatIcon 4s ease-in-out infinite;
+}
+
+.maintenance-icon-wrap svg {
+  color: #d4af37;
+}
+
+@keyframes floatIcon {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Title & Description */
+.maintenance-title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #ffffff;
+  line-height: 1.25;
+}
+
+.maintenance-badge {
+  display: inline-block;
+  padding: 6px 18px;
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 50px;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  color: #f3e5ab;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.maintenance-desc {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #dedede;
+  max-width: 480px;
+  margin: 0 auto 32px;
+}
+
+/* Contact info box */
+.maintenance-contact {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px dashed rgba(212, 175, 55, 0.25);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.88rem;
+  color: #cccccc;
+}
+
+.maintenance-contact__item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.maintenance-contact__item a {
+  color: #f3e5ab;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.maintenance-contact__item a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Refresh Button */
+.maintenance-refresh-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #810b38 0%, #a6124c 100%);
+  color: #ffffff;
+  border: 1px solid rgba(212, 175, 55, 0.6);
+  padding: 14px 32px;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(129, 11, 56, 0.4), 0 0 15px rgba(212, 175, 55, 0.2);
+  transition: all 0.3s ease;
+}
+
+.maintenance-refresh-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(129, 11, 56, 0.6), 0 0 25px rgba(212, 175, 55, 0.4);
+  background: linear-gradient(135deg, #960d42 0%, #bd1557 100%);
+}
+
+.maintenance-refresh-btn svg {
+  transition: transform 0.4s ease;
+}
+
+.maintenance-refresh-btn:hover svg {
+  transform: rotate(180deg);
+}
+
+.maintenance-footer {
+  margin-top: 24px;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.78rem;
+  color: #888888;
+}
+
+@media (max-width: 640px) {
+  .maintenance-card {
+    padding: 36px 20px;
+  }
+  .maintenance-title {
+    font-size: 1.75rem;
+  }
+  .maintenance-logo__main {
+    font-size: 2.1rem;
+  }
+  .maintenance-contact {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+}

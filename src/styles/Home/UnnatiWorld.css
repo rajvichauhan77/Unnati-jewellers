@@ -1,0 +1,321 @@
+/* ══════════════════════════════════════════════════════════════════
+   UNNATI WORLD — Bento Grid Layout with Custom Border Radii
+   ══════════════════════════════════════════════════════════════════ */
+
+:root {
+  --uw-outer-radius: clamp(24px, 4.5vw, 48px);
+  --uw-inner-radius: clamp(8px, 1.2vw, 12px);
+}
+
+.uw-section {
+  /* background: #fef8f6; */
+}
+
+.uw-container {
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* ── Header ───────────────────────────────────────────────────────── */
+.uw-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.uw-title {
+  font-family: "Fraunces", serif;
+  font-size: 40px;
+  font-weight: 500;
+  color: #810b38;
+  margin: 0 0 8px;
+  letter-spacing: 0.2px;
+}
+
+.uw-subtitle {
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  color: #6b5b52;
+  margin: 0;
+  letter-spacing: 0.2px;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   BENTO GRID
+   Left: 1 large card (full height)
+   Right: 1 top card + 2 bottom cards side by side
+   ══════════════════════════════════════════════════════════════════ */
+
+.uw-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 16px;
+  height: 500px;
+}
+
+.uw-right-col {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 16px;
+  height: 100%;
+  min-height: 0;
+}
+
+.uw-bottom-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  height: 100%;
+  min-height: 0;
+}
+
+/* ── Card base ────────────────────────────────────────────────────── */
+.uw-card {
+  overflow: hidden;
+  background: #efeeeb;
+  position: relative;
+  width: 100%;
+  min-height: 0;
+}
+
+/* Custom Border Radii for Bento Grid (Desktop & Tablet) */
+.uw-card--featured {
+  height: 100%;
+  border-radius: var(--uw-outer-radius) var(--uw-inner-radius) var(--uw-inner-radius) var(--uw-outer-radius);
+}
+
+.uw-card--top {
+  height: 225px;
+  border-radius: var(--uw-inner-radius) var(--uw-outer-radius) var(--uw-inner-radius) var(--uw-inner-radius);
+}
+
+.uw-card--bottom-left-card {
+  height: 100%;
+  border-radius: var(--uw-inner-radius);
+}
+
+.uw-card--bottom-right-card {
+  height: 100%;
+  border-radius: var(--uw-inner-radius) var(--uw-inner-radius) var(--uw-outer-radius) var(--uw-inner-radius);
+}
+
+.uw-card__link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+  min-height: 0;
+}
+
+.uw-card__link:focus-visible .uw-card__image-wrap {
+  outline: 2.5px solid #810b38;
+  outline-offset: 3px;
+}
+
+.uw-card__image-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.uw-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+/* Always-visible gradient at bottom */
+.uw-card__gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 55%;
+  background: linear-gradient(
+    to top,
+    rgba(10, 4, 7, 0.72) 0%,
+    transparent 100%
+  );
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+/* Text overlay */
+.uw-card__text {
+  position: absolute;
+  bottom: 20px;
+  left: 22px;
+  right: 22px;
+  z-index: 2;
+  transform: translateY(0);
+  transition: transform 0.35s ease;
+}
+
+.uw-card__title {
+  font-family: "Fraunces", serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: #fef8f6;
+  margin: 0 0 3px;
+  line-height: 1.25;
+  letter-spacing: 0.1px;
+}
+
+.uw-card--featured .uw-card__title {
+  font-size: 1.25rem;
+}
+
+.uw-card--featured .uw-card__text {
+  bottom: 28px;
+  left: 26px;
+}
+
+.uw-card--bottom-left-card .uw-card__title,
+.uw-card--bottom-right-card .uw-card__title {
+  font-size: 0.95rem;
+}
+
+.uw-card--bottom-left-card .uw-card__text,
+.uw-card--bottom-right-card .uw-card__text {
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+}
+
+.uw-card__subtitle {
+  font-family: "Inter", sans-serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(254, 248, 246, 0.7);
+  margin: 0;
+}
+
+/* Hover full-overlay (maroon tint) */
+.uw-card__hover-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(129, 11, 56, 0.32);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+/* ── Hover interactions ───────────────────────────────────────────── */
+.uw-card__link:hover .uw-card__image {
+  transform: scale(1.06);
+}
+
+.uw-card__link:hover .uw-card__hover-overlay {
+  opacity: 1;
+}
+
+.uw-card__link:hover .uw-card__text {
+  transform: translateY(-4px);
+}
+
+.uw-card__link:hover .uw-card__gradient {
+  opacity: 1.2; /* deepen on hover */
+}
+
+/* ════════════════════════════════
+   RESPONSIVE
+   ════════════════════════════════ */
+@media (max-width: 1024px) {
+  .uw-grid {
+    height: 480px;
+  }
+
+  .uw-container {
+    padding: 0 24px;
+  }
+
+  .uw-card--top {
+    height: 210px;
+  }
+}
+
+@media (max-width: 768px) {
+  .uw-section {
+    padding: 4px 0 5px;
+  }
+
+  .uw-grid {
+    grid-template-columns: 1fr;
+    height: auto;
+    gap: 12px;
+  }
+
+  /* Reset layout constraints for stacking */
+  .uw-card--featured {
+    height: auto;
+    aspect-ratio: 16 / 9;
+    /* Round top corners of the vertical stack */
+    border-radius: var(--uw-outer-radius) var(--uw-outer-radius) var(--uw-inner-radius) var(--uw-inner-radius);
+  }
+
+  .uw-right-col {
+    grid-template-rows: auto;
+    gap: 12px;
+  }
+
+  .uw-card--top {
+    height: auto;
+    aspect-ratio: 16 / 7;
+    border-radius: var(--uw-inner-radius);
+  }
+
+  .uw-bottom-row {
+    gap: 12px;
+  }
+
+  .uw-card--bottom-left-card {
+    height: auto;
+    aspect-ratio: 1 / 1;
+    border-radius: var(--uw-inner-radius) var(--uw-inner-radius) var(--uw-inner-radius) var(--uw-outer-radius);
+  }
+
+  .uw-card--bottom-right-card {
+    height: auto;
+    aspect-ratio: 1 / 1;
+    border-radius: var(--uw-inner-radius) var(--uw-inner-radius) var(--uw-outer-radius) var(--uw-inner-radius);
+  }
+}
+
+@media (max-width: 480px) {
+  .uw-container {
+    padding: 0 16px;
+  }
+
+  .uw-grid, .uw-right-col, .uw-bottom-row {
+    gap: 10px;
+  }
+
+  .uw-card--featured {
+    aspect-ratio: 4 / 3;
+  }
+
+  .uw-card__title {
+    font-size: 0.95rem;
+  }
+
+  .uw-card--featured .uw-card__title {
+    font-size: 1.05rem;
+  }
+
+  .uw-card__subtitle {
+    font-size: 0.58rem;
+    letter-spacing: 1.5px;
+  }
+
+  .uw-title {
+    font-size: 34px;
+  }
+}

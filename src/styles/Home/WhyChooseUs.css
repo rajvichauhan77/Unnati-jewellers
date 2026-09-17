@@ -1,0 +1,94 @@
+/* ===========================
+   WHY CHOOSE US DESIGN TOKENS
+=========================== */
+
+:root {
+  /* ================= Fonts ================= */
+  --font-heading: "Cormorant Garamond", serif;
+  --font-body: "Inter", sans-serif;
+
+  /* ================= Brand Colors ================= */
+  --color-primary: #810b38;
+  --color-primary-dark: #5a1321;
+  --color-primary-light: #9d3047;
+
+  --color-background: #fef8f6;
+  --color-surface: #ffffff;
+  --color-section: #efeeeb;
+
+  --color-gold: #d4af37;
+  --color-gold-light: #f5e6c8;
+
+  --color-text: #444444d4;
+  --color-white: #ffffff;
+  --color-black: #1a1a1a;
+}
+
+/* ===========================
+   WHY CHOOSE US
+=========================== */
+
+.why-choose {
+  background: var(--color-section);
+}
+
+.why-choose__heading {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.why-choose__heading h2 {
+  font-family: var(--font-heading);
+  font-size: 45px;
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+.why-choose__heading span {
+  display: block;
+  letter-spacing: 2px;
+  font-size: 15px;
+  color: var(--color-text);
+  text-transform: uppercase;
+  font-family: var(--font-body);
+}
+
+.why-choose__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+}
+
+/* ===========================
+   TABLET
+=========================== */
+
+@media (max-width: 992px) {
+  .why-choose__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width: 768px) {
+  .why-choose__heading h2 {
+    font-size: 40px;
+  }
+
+  .why-choose__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .why-choose__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-choose__heading h2 {
+    font-size: 34px;
+  }
+}
